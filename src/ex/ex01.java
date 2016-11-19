@@ -1,7 +1,7 @@
 package ex;
 /*
  * Date: 2016/11/14
- * Author: 1050210XX OOO
+ * Author: 105021028 ¿½¦ö¸Û
  */
 import java.util.*;
 public class ex01 {
@@ -9,27 +9,24 @@ public class ex01 {
 		// TODO Auto-generated method stub
 		Scanner scn =new Scanner(System.in);
 		int n=scn.nextInt();
-		var(n);
-
+		double[]a =new double[n];
+		double sum=0,t=0;
+		for(int i=0;i<n;i++){
+			a[i]=scn.nextDouble();
+		}
+		for(int i=0;i<n;i++){
+			sum=sum+a[i];
+		}
+		sum=sum/n;
+		for(int i=0;i<n;i++){
+			t=t+var(a[i],sum);
+		}
+		System.out.println(t/n);
 	}
-	public static void var(int n){
-		Scanner scn =new Scanner(System.in);
-		int sum1=0,sum2=0,v1,v2,v3,v4,t;
-		int[]data =new int[n];
-		for(v1=0;v1<n;v1++){
-			data[v1]=scn.nextInt();
-		}
-		for(v1=0;v1<n;v1++){
-			sum1+=data[v1];
-		}
-		v3=sum1/n;
-		for(v1=0;v1<n;v1++){
-			v2=v3=data[v1];
-			v4=v2*v2;
-			sum2+=v4;
-		}
-		t=sum2/n;
-		System.out.println(t);
+   public static double var(double a,double sum ){
+	   a=(a-sum)*(a-sum);
+	   return a;
+   
 	}
 
 }
